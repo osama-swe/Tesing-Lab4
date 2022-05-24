@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Calculator</title>
+    <script src="main.js"></script>
+    <script src="test.js"></script>
+</head>
+<body bgcolor="white">
+    <p align="center"><font size="7" color="black">Simple</font><font size="7" color="blue"> Calculator</font></p>
+    <br><br>
+    <div align="center">
+        <table border="0" bgcolor="grey" width="25%" height="250px">
+            <tr bgcolor="white" valign="top" width="100%">
+                <td align="center" width="100%">
+                    <h1>INPUT READER</h1>
+                    <b>First Number</b><br>
+                    <input type="number" id="firstnum">
+                    <br><br>
+                    <b>Second Number</b><br> 
+                    <input type="number" id='secondnum'>
+                    <br> <br>
+                    <button id="calcbtn" type="button" onclick="btn_click()">Calculate</button>
+                    <br> <br>
+                </td>
+            </tr>
+            <tr id="resbox" bgcolor="white" valign="top" width="100%" hidden="true">
+                <td align="center" width="100%">
+                    <h1>RESULT</h1>
+                    <b>ADD RES: </b><span id="add"></span><br>
+                    <b>SUBTRACT RES: </b><span id="sub"></span><br>
+                    <b>MULTIPLY RES: </b><span id="mult"></span><br>
+                    <b>DIVIDE RES: </b><span id="divide"></span><br>
+                    <button type="button" onclick="reset_click()">Reset</button>
+                    <br> <br>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
