@@ -2,16 +2,24 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.Assert.assertEquals;
 
 public class SeleniumTest {
     @Test
     public void WebTest(){
-        System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");
-        System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
-        System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
-        WebDriver driver = new FirefoxDriver();
+        WebDriver driver;
+        try {
+            System.setProperty("webdriver.gecko.driver", "src/test/resources/geckodriver.exe");
+            System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
+            System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
+            driver = new FirefoxDriver();
+        }
+        catch (Exception e){
+            System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+            driver = new ChromeDriver();
+        }
         driver.get(System.getProperty("user.dir")+"\\src\\test\\resources\\main.html");
         for (int k=0;k<100;k++){
             int i = (int)(Math.random()*100);
